@@ -1,0 +1,2 @@
+#!/bin/bash
+i3status | dzen2 -p -fg "#fff" -bg "#212121" -fn "Terminus" -h 30 -w 1850 -x 40 -y 1040

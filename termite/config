@@ -1,0 +1,17 @@
+[options]
+font = Anonymous Pro 15
+
+[colors]
+background = #212121
+foreground = #ffffff
+
+color10 = #2DFDC3
+color14 = #8CCEF8
+
+color9 = #F16864
+
+color12 = #6593FF
+
+color11 = #D6AB37
+
+color2 = #8CCEF8

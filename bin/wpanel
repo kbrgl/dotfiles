@@ -1,0 +1,31 @@
+#!/bin/bash
+
+curr_workspace_char=◉
+othr_workspace_char=○
+
+while true; do
+  sleep .1s
+  wspace=`wmctrl -d | grep \* | tr -s " " | cut -d' ' -f9`
+  if [ "$wspace" == "1" ]; then
+    echo -n "$curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
+  elif [ "$wspace" == "2" ]; then
+    echo -n "$othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
+  elif [ "$wspace" == "3" ]; then
+    echo -n "$othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
+  elif [ "$wspace" == "4" ]; then
+    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
+  elif [ "$wspace" == "5" ]; then
+    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
+  elif [ "$wspace" == "6" ]; then
+    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
+  elif [ "$wspace" == "7" ]; then
+    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
+  elif [ "$wspace" == "8" ]; then
+    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char"
+  elif [ "$wspace" == "9" ]; then
+    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char"
+  elif [ "$wspace" == "10" ]; then
+    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char"
+  fi
+  echo "%{c}$(date +'%H:%M')%{r}$(cat /sys/class/power_supply/BAT0/capacity)%"
+done | lemonbar -p -g 1850x30+40+10 -f "DejaVu Sans Mono" -F "#FFFFFF"
