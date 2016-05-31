@@ -9,9 +9,9 @@ Dotfile dependencies:
 * `compton.conf`:
     The Compton compositor
 * `.vimrc`:
-    The Vim text editor
+    The Vim text editor, the spacegray.vim theme
 * `.xinitrc`, `.Xresources`:
-    The X display server
+    The X display server, BSPWM and SXHKD
 * `bspwm/bspwmrc`:
     The BSPWM tiling window manager, SXHKD, feh, compton, `bin/wpanel`
 * `sxhkd/sxhkdrc`:
@@ -21,7 +21,7 @@ Dotfile dependencies:
 * `bin/panel`:
     i3status, dzen2
 * `bin/wpanel`:
-    Lemonbar, `wmctrl`, DejaVu Sans Mono (font)
+    Lemonbar, `wmctrl`, Source Code Pro (font)
 * `bin/swap-mouse-buttons.sh`:
     `synclient`
 * `termite/config`:
