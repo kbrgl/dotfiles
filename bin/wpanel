@@ -1,31 +1,78 @@
 #!/bin/bash
 
-curr_workspace_char=◉
-othr_workspace_char=○
+workspace() {
+  c="\uf111"
+  o="\uf1db"
+  wspace=$(wmctrl -d | grep \* | tr -s " " | cut -d' ' -f9)
+  case $wspace in
+    "1") echo -en "$c $o $o $o $o $o $o $o $o $o";;
+    "2") echo -en "$o $c $o $o $o $o $o $o $o $o";;
+    "3") echo -en "$o $o $c $o $o $o $o $o $o $o";;
+    "4") echo -en "$o $o $o $c $o $o $o $o $o $o";;
+    "5") echo -en "$o $o $o $o $c $o $o $o $o $o";;
+    "6") echo -en "$o $o $o $o $o $c $o $o $o $o";;
+    "7") echo -en "$o $o $o $o $o $o $c $o $o $o";;
+    "8") echo -en "$o $o $o $o $o $o $o $c $o $o";;
+    "9") echo -en "$o $o $o $o $o $o $o $o $c $o";;
+   "10") echo -en "$o $o $o $o $o $o $o $o $o $c";;
+  esac 
+}
+
+dt() {
+  echo -n "$(date +'%b %d %H:%M')"
+}
+
+center() {
+  echo -n "%{c}"
+}
+
+right() {
+  echo -n "%{r}"
+}
+
+padding() {
+    padding="    "
+    echo -en "$padding"
+}
+
+battery() {
+  status="$(cat /sys/class/power_supply/BAT0/status)"
+  capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
+  if [[ $status == "Charging" ]]; then
+    echo -en "%{F#0000ff}\uf0e7 "
+  elif [[ $capacity -ge  "85" ]]; then
+    echo -en "%{F#00ff00}\uf240 "
+  elif [[ $capacity -ge "65" ]]; then
+    echo -en "%{F#99ff00}\uf241 "
+  elif [[ $capacity -ge "45" ]]; then
+    echo -en "%{F#eeffee}\uf242 "
+  elif [[ $capacity -ge "15" ]]; then
+    echo -en "%{F#ff6600}\uf243 "
+  elif [[ $capacity -ge "0" ]]; then
+    echo -en "%{F#ff0000}\uf244 " 
+  fi
+  echo -n "$capacity%%{F-}"
+}
+
+volume() {
+  echo -en "\uf025 $(awk -F[][] '{ print $2 }' <(amixer sget Master) | tail -n 1)"
+}
+
+hostname() {
+  echo -n "$(whoami)@$(cat /etc/hostname)"
+}
 
 while true; do
   sleep .1s
-  wspace=`wmctrl -d | grep \* | tr -s " " | cut -d' ' -f9`
-  if [ "$wspace" == "1" ]; then
-    echo -n "$curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
-  elif [ "$wspace" == "2" ]; then
-    echo -n "$othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
-  elif [ "$wspace" == "3" ]; then
-    echo -n "$othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
-  elif [ "$wspace" == "4" ]; then
-    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
-  elif [ "$wspace" == "5" ]; then
-    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
-  elif [ "$wspace" == "6" ]; then
-    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
-  elif [ "$wspace" == "7" ]; then
-    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char"
-  elif [ "$wspace" == "8" ]; then
-    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char $othr_workspace_char"
-  elif [ "$wspace" == "9" ]; then
-    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char $othr_workspace_char"
-  elif [ "$wspace" == "10" ]; then
-    echo -n "$othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $othr_workspace_char $curr_workspace_char"
-  fi
-  echo "%{c}$(date +'%H:%M')%{r}$(cat /sys/class/power_supply/BAT0/capacity)%"
-done | lemonbar -p -g 1850x30+40+10 -f "DejaVu Sans Mono" -F "#FFFFFF"
+  workspace
+  center
+  dt
+  right
+  volume
+  padding
+  battery
+  padding
+  hostname
+  echo -n " "
+  echo "%{F#ee5066}////%{F-}"
+done | lemonbar -p -g 1850x30+40+10 -f "Source Code Pro:size=12" -f "FontAwesome:size=12" -F "#FFFFFF"
