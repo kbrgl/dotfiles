@@ -59,7 +59,11 @@ volume() {
 }
 
 hostname() {
-  echo -n "$(whoami)@$(cat /etc/hostname)"
+  echo -n "$USER@$(cat /etc/hostname)"
+}
+
+network_name() {
+  echo -en "%{A:connman-gtk:}\uf1eb $(iwgetid -r)%{A}"
 }
 
 while true; do
@@ -68,6 +72,8 @@ while true; do
   center
   dt
   right
+  network_name
+  padding
   volume
   padding
   battery
@@ -75,4 +81,4 @@ while true; do
   hostname
   echo -n " "
   echo "%{F#ee5066}////%{F-}"
-done | lemonbar -p -g 1850x30+40+10 -f "Source Code Pro:size=12" -f "FontAwesome:size=12" -F "#FFFFFF"
+done | lemonbar -p -g 1850x30+40+10 -f "Source Code Pro:size=12" -f "FontAwesome:size=12" -F "#FFFFFF" | sh

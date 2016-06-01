@@ -21,7 +21,7 @@ Dotfile dependencies:
 * `bin/panel`:
     i3status, dzen2
 * `bin/wpanel`:
-    Lemonbar, `wmctrl`, Source Code Pro (font)
+    Lemonbar, `wmctrl`, Source Code Pro (font), Connman, connman-gtk (AUR), FontAwesome (icon font)
 * `bin/swap-mouse-buttons.sh`:
     `synclient`
 * `termite/config`:
