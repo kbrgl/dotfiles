@@ -1,5 +1,7 @@
 #!/bin/bash
 
+pkill lemonbar
+
 workspace() {
   c="\uf111"
   o="\uf1db"
@@ -16,6 +18,10 @@ workspace() {
     "9") echo -en "$o $o $o $o $o $o $o $o $c $o";;
    "10") echo -en "$o $o $o $o $o $o $o $o $o $c";;
   esac 
+}
+
+nowplaying() {
+  echo -n "$(spotify_nowplaying)"
 }
 
 dt() {
@@ -63,7 +69,14 @@ hostname() {
 }
 
 network_name() {
-  echo -en "%{A:connman-gtk:}\uf1eb $(iwgetid -r)%{A}"
+  nname=$(iwgetid -r)
+  echo -en "%{A:connman-gtk:}\uf1eb "
+  if [[ $nname != "" ]]; then
+    echo -n "$nname"
+  else
+    echo -n "Not connected"
+  fi
+  echo -n "%{A}"
 }
 
 while true; do
@@ -79,6 +92,6 @@ while true; do
   battery
   padding
   hostname
-  echo -n " "
-  echo "%{F#ee5066}////%{F-}"
+
+  echo 
 done | lemonbar -p -g 1850x30+40+10 -f "Source Code Pro:size=12" -f "FontAwesome:size=12" -F "#FFFFFF" | sh
