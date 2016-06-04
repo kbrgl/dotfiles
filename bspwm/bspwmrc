@@ -22,4 +22,4 @@ bspc config normal_border_color "#212121"
 feh --bg-fill /home/kabir/Pictures/buildingroof.jpg
 
 compton &
-/home/kabir/bin/wpanel &
+/home/kabir/bin/panel &
