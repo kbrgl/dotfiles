@@ -9,8 +9,15 @@ SPOTIFY_METADATA="$(dbus-send                                                 \
  --dest=$SP_DEST                                                             \
  $SP_PATH                                                                    \
  org.freedesktop.DBus.Properties.Get                                         \
- string:"$SP_MEMB" string:'Metadata'                                         \
- | grep -Ev "^method"                           `# Ignore the first line.`   \
+ string:"$SP_MEMB" string:'Metadata' 2> /dev/null)"
+
+if [[ !$? ]]; then
+    echo "Play something!"
+    exit 1
+fi
+
+
+parsed = "$(echo $SPOTIFY_METADATA | grep -Ev "^method"                           `# Ignore the first line.`   \
  | grep -Eo '("(.*)")|(\b[0-9][a-zA-Z0-9.]*\b)' `# Filter interesting fiels.`\
  | sed -E '2~2 a|'                              `# Mark odd fields.`         \
  | tr -d '\n'                                   `# Remove all newlines.`     \

@@ -1,8 +1,8 @@
 colorscheme spacegray
-syntax enable
 
-set tabstop=3
+set tabstop=4
 set softtabstop=4
+set shiftwidth=4
 set expandtab
 
 set number
@@ -11,14 +11,9 @@ set cursorline
 
 filetype indent on
 
-set wildmenu
-
 set lazyredraw
-
+set list
 set showmatch
-
-set incsearch
-set hlsearch
 
 set foldenable
 set foldlevelstart=10
@@ -29,3 +24,5 @@ set backupdir=~/.tmp
 set backupskip=/tmp/*,/private/tmp/*
 set directory=~/.tmp
 set writebackup
+
+let python_highlight_all=1

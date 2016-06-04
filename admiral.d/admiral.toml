@@ -1,0 +1,45 @@
+[admiral]
+items = ["left", "workspaces", "center", "clock", "right", "network", "padding", "battery", "padding", "volume", "padding", "hostname"]
+
+[left]
+path = ["/usr/bin/echo", "%{l}"]
+static = true
+
+[center]
+path = ["/usr/bin/echo", "%{c}"]
+static = true
+
+[right]
+path = ["/usr/bin/echo", "%{r}"]
+static = true
+
+[padding]
+path = ["/usr/bin/echo", "      "]
+static = true
+
+[clock]
+path = ["/usr/bin/date", "+%b %d %H:%M"]
+reload = 1
+
+[battery]
+path = "/home/kabir/bin/battery.sh"
+reload = 3
+
+[network]
+path = "/home/kabir/bin/network_name.sh"
+reload = 5
+
+[volume]
+path = "/home/kabir/bin/volume.sh"
+reload = 0.01
+
+[hostname]
+path = "/home/kabir/bin/hostname.sh"
+static = true
+
+[nowplaying]
+path = "/home/kabir/bin/nowplaying.sh"
+reload = 2
+
+[workspaces]
+path = "/home/kabir/bin/workspaces.sh"

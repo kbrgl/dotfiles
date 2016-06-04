@@ -1,0 +1,7 @@
+#!/bin/bash
+
+pkill admiral
+pkill lemonbar
+
+admiral | lemonbar -a 30 -g 1850x30+40+10 -f "FontAwesome:size=12" -f "Fira Mono:size=12" -F "#FFFFFF" | sh
+

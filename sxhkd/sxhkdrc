@@ -5,7 +5,7 @@
 
 # increase / decrease volume
 XF86Audio{Raise,Lower}Volume
-  amixer sset Master {2%+,2%-} unmute
+  amixer -q sset Master {2%+,2%-} unmute
 
 # Mute volume
 XF86AudioMute
