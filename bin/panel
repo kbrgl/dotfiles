@@ -3,6 +3,5 @@
 pkill admiral
 pkill lemonbar
 
-admiral | lemonbar -a 30 -g 1840x30+40+20 -f "Fira Mono:size=12" -f "FontAwesome:size=12" -F "#FFFFFF" | sh
-
+admiral | lemonbar -a 30 -g 1840x30+40+20 -f "Roboto Mono:size=12" -f "FontAwesome:size=12" -F "#FFFFFF" | sh
 
