@@ -14,7 +14,7 @@ path = ["/usr/bin/echo", "%{r}"]
 static = true
 
 [padding]
-path = ["/usr/bin/echo", "      "]
+path = ["/usr/bin/echo", "    "]
 static = true
 
 [clock]
@@ -22,24 +22,24 @@ path = ["/usr/bin/date", "+%b %d %H:%M"]
 reload = 1
 
 [battery]
-path = "/home/kabir/bin/battery.sh"
+path = "/home/kabir/.local/bin/battery.sh"
 reload = 3
 
 [network]
-path = "/home/kabir/bin/network_name.sh"
+path = "/home/kabir/.local/bin/network_name.sh"
 reload = 5
 
 [volume]
-path = "/home/kabir/bin/volume.sh"
+path = "/home/kabir/.local/bin/volume.sh"
 reload = 0.01
 
 [hostname]
-path = "/home/kabir/bin/hostname.sh"
+path = "/home/kabir/.local/bin/hostname.sh"
 static = true
 
 [nowplaying]
-path = "/home/kabir/bin/nowplaying.sh"
+path = "/home/kabir/.local/bin/nowplaying.sh"
 reload = 2
 
 [workspaces]
-path = "/home/kabir/bin/workspaces.sh"
+path = "/home/kabir/.local/bin/workspaces.sh"

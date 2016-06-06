@@ -3,7 +3,7 @@ c="\uf111"
 o="\uf1db"
 
 chds() {
-    echo -en "%{A:bspc desktop -f $1:}$2%{A}  "
+    echo -en "%{A:bspc desktop -f $1:}$2%{A} "
 }
 
 while read -r line; do

@@ -1,8 +1,8 @@
 #!/bin/sh
 
-bspc monitor -d 1 2 3 4 5 6 7 8 9 10
+bspc monitor -d 1 2 3 4 5 6 7 8 9 0
 
-bspc config border_width        1 
+bspc config border_width        4
 bspc config window_gap          20
 bspc config top_padding         50
 bspc config left_padding        15
@@ -19,7 +19,7 @@ bspc config focused_border_color "#eeeeee"
 bspc config active_border_color "#eeeeee"
 bspc config normal_border_color "#212121"
 
-feh --bg-fill /home/kabir/Pictures/buildingroof.jpg
+feh --bg-fill /home/kabir/Pictures/bg.jpg
 
 compton &
-/home/kabir/bin/panel &
+/home/kabir/.local/bin/panel &
