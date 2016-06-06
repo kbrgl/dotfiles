@@ -1,5 +1,7 @@
 #!/bin/sh
 
+sxhkd &
+
 bspc config border_width        4
 bspc config window_gap          20
 bspc config top_padding         50
@@ -17,6 +19,8 @@ bspc config active_border_color "#eeeeee"
 bspc config normal_border_color "#212121"
 
 bspc monitor -d 1 2 3 4 5 6 7 8 9 0
+
+xsetroot -cursor_name left_ptr
 
 feh --bg-fill /home/kabir/Pictures/bg.jpg
 
