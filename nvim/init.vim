@@ -9,7 +9,14 @@ set number
 set showcmd
 set cursorline
 
-filetype indent on
+filetype off
+
+set rtp+=~/.config/nvim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'rust-lang/rust.vim'
+call vundle#end()
+filetype plugin indent on
 
 set lazyredraw
 set list

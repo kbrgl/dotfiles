@@ -2,56 +2,59 @@
 items = ["alpha", "left", "launcher", "padding", "workspaces", "center", "title", "right", "network", "padding", "volume", "padding", "uncolor", "battery", "alpha", "padding", "clock", "uncolor"]
 
 [alpha]
-path = ["/usr/bin/echo", "%{F#ddffffff}"]
+path = "echo '%{F#ddffffff}'"
 static = true
 
 [uncolor]
-path = ["/usr/bin/echo", "%{F-}"]
+path = "echo '%{F-}'"
 static = true
 
 [left]
-path = ["/usr/bin/echo", "%{l}"]
+path = "echo '%{l}'"
 static = true
 
 [center]
-path = ["/usr/bin/echo", "%{c}"]
+path = "echo '%{c}'"
 static = true
 
 [right]
-path = ["/usr/bin/echo", "%{r}"]
+path = "echo '%{r}'"
 static = true
 
 [padding]
-path = ["/usr/bin/echo", "    "]
+path = "echo '   '"
 static = true
 
+[spotify]
+path = "sp current | tail -n 2 | grep -Po '\\s(.*)$' | tr -d '\\n' | sed 's/^       //g' | sed 's/        / - /g' | cut -c 1-50 | awk 'length($0)>=50 {print $0\"...\"} length($0)<50 {print $0}'"
+reload = 2
+
 [title]
-path = ["/usr/bin/xtitle"]
-reload = 0.1
+path = "xtitle -s | scroller -o -n -l 50"
 
 [launcher]
-path = ["/home/kabir/.local/bin/launcher.sh"]
+path = "launcher.sh"
 static = true
 
 [clock]
-path = ["/usr/bin/date", "+%H:%M"]
+path = "date +%H:%M"
 reload = 1
 
 [battery]
-path = "/home/kabir/.local/bin/battery.sh"
+path = "battery.sh"
 reload = 3
 
 [network]
-path = "/home/kabir/.local/bin/network_name.sh"
+path = "network_name.sh"
 reload = 5
 
 [volume]
-path = "/home/kabir/.local/bin/volume.sh"
+path = "volume.sh"
 reload = 0.01
 
 [hostname]
-path = "/home/kabir/.local/bin/hostname.sh"
+path = "hostname.sh"
 static = true
 
 [workspaces]
-path = "/home/kabir/.local/bin/workspaces.sh"
+path = "workspaces.sh"

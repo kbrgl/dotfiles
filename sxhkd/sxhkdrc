@@ -11,6 +11,10 @@ XF86Audio{Raise,Lower}Volume
 XF86AudioMute
   amixer sset Master toggle
 
+# brightness
+XF86MonBrightness{Up,Down}
+  xbacklight -time 0 -steps 1 -{inc,dec} 5
+
 # terminal emulator
 super + Return
 	termite

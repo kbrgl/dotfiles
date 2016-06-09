@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/home/kabir/.themes/deadSimple-0a/openbox-3'
 let g:netrw_dirhist_2='/home/kabir/.config/sxhkd'
 let g:netrw_dirhist_3='/home/kabir/.local/bin'
+let g:netrw_dirhist_4='/home/kabir/.local/src'

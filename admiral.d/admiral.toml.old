@@ -1,0 +1,57 @@
+[admiral]
+items = ["alpha", "left", "launcher", "padding", "workspaces", "center", "title", "right", "network", "padding", "volume", "padding", "uncolor", "battery", "alpha", "padding", "clock", "uncolor"]
+
+[alpha]
+path = ["/usr/bin/echo", "%{F#ddffffff}"]
+static = true
+
+[uncolor]
+path = ["/usr/bin/echo", "%{F-}"]
+static = true
+
+[left]
+path = ["/usr/bin/echo", "%{l}"]
+static = true
+
+[center]
+path = ["/usr/bin/echo", "%{c}"]
+static = true
+
+[right]
+path = ["/usr/bin/echo", "%{r}"]
+static = true
+
+[padding]
+path = ["/usr/bin/echo", "    "]
+static = true
+
+[title]
+path = ["/usr/bin/xtitle"]
+reload = 0.1
+
+[launcher]
+path = ["/home/kabir/.local/bin/launcher.sh"]
+static = true
+
+[clock]
+path = ["/usr/bin/date", "+%H:%M"]
+reload = 1
+
+[battery]
+path = "/home/kabir/.local/bin/battery.sh"
+reload = 3
+
+[network]
+path = "/home/kabir/.local/bin/network_name.sh"
+reload = 5
+
+[volume]
+path = "/home/kabir/.local/bin/volume.sh"
+reload = 0.01
+
+[hostname]
+path = "/home/kabir/.local/bin/hostname.sh"
+static = true
+
+[workspaces]
+path = "/home/kabir/.local/bin/workspaces.sh"
