@@ -1,4 +1,5 @@
 #!/bin/bash
+oo="\uf10c"
 c="\uf111"
 o="\uf1db"
 
@@ -26,7 +27,7 @@ while read -r line; do
                         ;;
                     o*)
                         # occupied desktop
-                        chds $name $o
+                        chds $name $oo
                         ;;
                     O*)
                         # focused occupied desktop
@@ -34,7 +35,9 @@ while read -r line; do
                         ;;
                     u*)
                         # urgent desktop
+                        echo "%{F#00FF00}"
                         chds $name $o
+                        echo "%{F-}"
                         ;;
                     U*)
                         # focused urgent desktop

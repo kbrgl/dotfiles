@@ -9,6 +9,12 @@ set number
 set showcmd
 set cursorline
 
+"split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
 filetype off
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
