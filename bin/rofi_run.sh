@@ -1,3 +1,3 @@
 #!/bin/bash
-rofi -show run -m -1 -padding "10" -color-window "#131313, #fff, #fff" -color-normal "#131313, #fff, #131313, #fff, #131313" -color-active "#131313, #ff0000, #ff0000, #fff" -location 0 -font "Anonymous Pro 19" -bc "#fff" -bw 2 -opacity 100
+rofi -show run -m -1 -padding "10" -color-window "#121315, #fff, #fff" -color-normal "#121315, #fff, #121315, #fff, #121315" -color-active "#121315, #ff0000, #ff0000, #fff" -location 0 -font "Fira Mono 17" -bc "#fff" -bw 2 -opacity 100
 
