@@ -1,7 +1,8 @@
 #!/bin/bash
-oo="\uf10c"
+
+oo="\uf192"
 c="\uf111"
-o="\uf1db"
+o="\uf10c"
 
 chds() {
     echo -en "%{A:bspc desktop -f $1:}$2%{A} "
