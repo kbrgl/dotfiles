@@ -1,7 +1,6 @@
 #!/bin/bash
-
-oo="\uf192"
-c="\uf111"
+oo="\uf111"
+c="\uf192"
 o="\uf10c"
 
 chds() {
