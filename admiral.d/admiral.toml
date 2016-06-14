@@ -1,5 +1,5 @@
 [admiral]
-items = ["alpha", "left", "launcher", "padding", "workspaces", "center", "title", "right", "network", "padding", "volume", "padding", "uncolor", "battery", "alpha", "padding", "clock", "uncolor"]
+items = ["alpha", "left", "padding", "workspaces", "center", "title", "right", "network", "padding", "volume", "padding", "uncolor", "battery", "alpha", "padding", "clock", "padding", "uncolor"]
 
 [alpha]
 path = "echo '%{F#ddffffff}'"
