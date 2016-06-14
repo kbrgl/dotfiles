@@ -3,43 +3,43 @@ font = Fira Mono 12
 allow_bold = false
 
 [colors]
-# hard contrast: background = #1d2021
-# medium contrast: background = #282828
-# soft contrast: background = #32302f
-background = #121212
-foreground = #ebdbb2
-foreground_bold = #ebdbb2
 
-# dark0 + gray
-color0 = #282828
-color8 = #928374
+# special
+foreground      = #c0c5ce
+foreground_bold = #c0c5ce
+cursor          = #c0c5ce
+# background      = #2b303b
+background = #121315
 
-# neutral_red + bright_red
-color1 = #cc241d
-color9 = #fb4934
+# black
+color0  = #2b303b
+color8  = #65737e
 
-# neutral_green + bright_green
-color2 = #98971a
-color10 = #b8bb26
+# red
+color1  = #bf616a
+color9  = #bf616a
 
-# neutral_yellow + bright_yellow
-color3 = #d79921
-color11 = #fabd2f
+# green
+color2  = #a3be8c
+color10 = #a3be8c
 
-# neutral_blue + bright_blue
-color4 = #458588
-color12 = #83a598
+# yellow
+color3  = #ebcb8b
+color11 = #ebcb8b
 
-# neutral_purple + bright_purple
-color5 = #b16286
-color13 = #d3869b
+# blue
+color4  = #8fa1b3
+color12 = #8fa1b3
 
-# neutral_aqua + faded_aqua
-color6 = #689d6a
-color14 = #8ec07c
+# magenta
+color5  = #b48ead
+color13 = #b48ead
 
-# light4 + light1
-color7 = #a89984
-color15 = #ebdbb2
+# cyan
+color6  = #96b5b4
+color14 = #96b5b4
 
-# vim: ft=dosini cms=#%s
+# white
+color7  = #c0c5ce
+color15 = #eff1f5
+
