@@ -1,13 +1,5 @@
 [admiral]
-items = ["alpha", "left", "padding", "title", "center", "workspaces", "right", "network", "padding", "volume", "padding", "uncolor", "battery", "alpha", "padding", "clock", "padding", "uncolor"]
-
-[alpha]
-path = "echo '%{F#ddffffff}'"
-static = true
-
-[uncolor]
-path = "echo '%{F-}'"
-static = true
+items = ["left", "padding", "title", "center", "workspaces", "right", "network", "padding", "volume", "padding", "battery", "padding", "clock", "padding"]
 
 [left]
 path = "echo '%{l}'"
