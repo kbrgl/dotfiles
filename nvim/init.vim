@@ -36,7 +36,7 @@ Plugin 'joshdick/onedark.vim'
 Plugin 'ajh17/Spacegray.vim'
 call vundle#end()
 filetype plugin indent on
-colorscheme gruvbox
+colorscheme spacegray
 
 set lazyredraw
 set list
