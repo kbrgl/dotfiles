@@ -1,5 +1,5 @@
 [global]
-    font = Fira Sans 15
+    font = Space Mono 15
 
     # Allow a small subset of html markup:
     #   <b>bold</b>

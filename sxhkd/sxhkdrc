@@ -5,23 +5,23 @@
 
 # increase / decrease volume
 XF86Audio{Raise,Lower}Volume
-  amixer -q sset Master {2%+,2%-} unmute
+  amixer -q sset Master {3%+,3%-} unmute
 
 # Mute volume
 XF86AudioMute
-  amixer sset Master toggle
+  amixer -q sset Master toggle
 
 # brightness
 XF86MonBrightness{Up,Down}
-  xbacklight -time 0 -steps 1 -{inc,dec} 5
+  xbacklight -time 1 -steps 1 -{inc,dec} 5
 
 # terminal emulator
 super + Return
-	termite
+	termite -e fish
 
 # program launcher
 super + space
-	rofi_run.sh
+	rofi -show run -m -1 -padding "10" -color-window "#121315, #fff, #fff" -color-normal "#121315, #fff, #121315, #fff, #121315" -color-active "#121315, #ff0000, #ff0000, #fff" -location 0 -font "Fira Mono 17" -bc "#fff" -bw 2 -opacity 100
 
 super + shift + space
     rofi -show window -m -1 -padding "10" -color-window "#121315, #fff, #fff" -color-normal "#121315, #fff, #121315, #fff, #121315" -color-active "#121315, #ff0000, #ff0000, #fff" -location 0 -font "Fira Mono 19" -bc "#fff" -bw 2 -opacity 100

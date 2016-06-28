@@ -22,7 +22,8 @@ path = "sp current | tail -n 2 | grep -Po '\\s(.*)$' | tr -d '\\n' | sed 's/^   
 reload = 2
 
 [title]
-path = "xtitle -s | scroller -o -n -l 50"
+path = "xtitle -s | roller -t 50"
+shell = "/usr/bin/fish"
 
 [launcher]
 path = "launcher.sh"
