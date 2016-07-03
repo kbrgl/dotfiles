@@ -1,18 +1,28 @@
 #!/bin/bash
 status="$(cat /sys/class/power_supply/BAT0/status)"
 capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
+color=false
+echo -n "%{F#645d3d}"
 if [[ $status == "Charging" ]]; then
-  echo -en "%{F#ddffff00}\uf0e7 "
+    echo -en "\uf0e7"
 elif [[ $capacity -ge  "85" ]]; then
-  echo -en "%{F#dd00ff00}\uf240 "
+    echo -en "\uf240"
 elif [[ $capacity -ge "65" ]]; then
-  echo -en "%{F#dd99ff00}\uf241 "
+    echo -en "\uf241"
 elif [[ $capacity -ge "45" ]]; then
-  echo -en "%{F#ddffffff}\uf242 "
+    echo -en "\uf242"
 elif [[ $capacity -ge "15" ]]; then
-  echo -en "%{F#ddff6600}\uf243 "
+    echo -en "\uf243"
 elif [[ $capacity -ge "0" ]]; then
-  echo -en "%{F#ddff0000}\uf244 "
+    color=true
+    echo -en "%{F#824d4d}\uf244"
 fi
-echo "$capacity%%{F-}"
+echo -n "%{F-}"
 
+echo -n " $capacity%"
+
+if [[ color ]]; then
+    echo "%{F-}"
+else
+    echo
+fi

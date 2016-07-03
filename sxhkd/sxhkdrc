@@ -21,10 +21,11 @@ super + Return
 
 # program launcher
 super + space
-	rofi -show run -m -1 -padding "10" -color-window "#121315, #fff, #fff" -color-normal "#121315, #fff, #121315, #fff, #121315" -color-active "#121315, #ff0000, #ff0000, #fff" -location 0 -font "Fira Mono 17" -bc "#fff" -bw 2 -opacity 100
+    rofi -show run -m -1 -padding "20" -width 30 -lines 5 -color-window "#121315, #98805c, #98805c" -color-normal "#121315, #98805c, #121315, #98805c, #121315" -color-active "#121315, #98805c, #121315, #98805c, #121315" -location 0 -font "Space Mono 15" -bc "#98805c" -bw 2 -opacity 100 -fuzzy
 
+# window management
 super + shift + space
-    rofi -show window -m -1 -padding "10" -color-window "#121315, #fff, #fff" -color-normal "#121315, #fff, #121315, #fff, #121315" -color-active "#121315, #ff0000, #ff0000, #fff" -location 0 -font "Fira Mono 19" -bc "#fff" -bw 2 -opacity 100
+    rofi -show window -m -1 -padding "20" -width 30 -lines 5 -color-window "#121315, #98805c, #98805c" -regex -color-normal "#121315, #98805c, #121315, #98805c, #121315" -color-active "#121315, #98805c, #121315, #98805c, #121315" -location 0 -font "Space Mono 15" -bc "#98805c" -bw 2 -opacity 100 -fuzzy
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -99,8 +100,8 @@ super + {o,i}
 	bspc wm -h on
 
 # focus or send to the given desktop
-super + {_,shift + }{0-9}
-	bspc {desktop -f,node -d} {0-9}
+super + {_,shift + }{1-5}
+	bspc {desktop -f,node -d} '^{1-5}'
 
 #
 # preselect
@@ -137,3 +138,4 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	xdo move {-x -20,-y +20,-y -20,-x +20}
+

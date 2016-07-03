@@ -5,7 +5,7 @@ set background=dark
 let g:gruvbox_bold=0
 let g:gruvbox_underline=0
 let g:gruvbox_undercurl=0
-let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_dark='medium'
 
 let base16colorspace=256
 
@@ -34,6 +34,7 @@ Plugin 'mhinz/vim-startify'
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'ajh17/Spacegray.vim'
+Plugin 'sjl/badwolf'
 call vundle#end()
 filetype plugin indent on
 colorscheme spacegray

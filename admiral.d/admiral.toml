@@ -1,5 +1,5 @@
 [admiral]
-items = ["left", "padding", "title", "center", "workspaces", "right", "network", "padding", "volume", "padding", "battery", "padding", "clock", "padding"]
+items = ["left", "padding", "workspaces", "right", "spotify", "padding", "network", "padding", "volume", "padding", "battery", "padding", "clock", "padding"]
 
 [left]
 path = "echo '%{l}'"
@@ -18,12 +18,10 @@ path = "echo '   '"
 static = true
 
 [spotify]
-path = "sp current | tail -n 2 | grep -Po '\\s(.*)$' | tr -d '\\n' | sed 's/^       //g' | sed 's/        / - /g' | cut -c 1-50 | awk 'length($0)>=50 {print $0\"...\"} length($0)<50 {print $0}'"
-reload = 2
+path = "reloader.rb 2 sp_current.rb | roller -t 40 -b '%{A4:sp prev:}%{A5:sp next:}%{A:sp play:}%{F#645263}%{F-} ' -a '%{A}%{A}%{A}' -s ' --- '"
 
 [title]
-path = "xtitle -s | roller -t 50"
-shell = "/usr/bin/fish"
+path = "xtitle -s | roller -t 50 -i 150"
 
 [launcher]
 path = "launcher.sh"

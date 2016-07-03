@@ -1,7 +1,4 @@
 #!/bin/bash
-oo="\uf111"
-c="\uf192"
-o="\uf10c"
 
 chds() {
     echo -en "%{A:bspc desktop -f $1:}$2%{A} "
@@ -19,29 +16,27 @@ while read -r line; do
                 case $item in
                     f*)
                         # free desktop
-                        chds $name $o
+                        chds $name $name
                         ;;
                     F*)
                         # focused free desktop
-                        chds $name $c
+                        chds $name "%{F#FFFFFF}$name%{F-}"
                         ;;
                     o*)
                         # occupied desktop
-                        chds $name $oo
+                        chds $name "[$name]"
                         ;;
                     O*)
                         # focused occupied desktop
-                        chds $name $c
+                        chds $name "%{F#FFFFFF}[$name]%{F-}"
                         ;;
                     u*)
                         # urgent desktop
-                        echo "%{F#00FF00}"
-                        chds $name $o
-                        echo "%{F-}"
+                        chds $name $name
                         ;;
                     U*)
                         # focused urgent desktop
-                        chds $name $c
+                        chds $name "%{F#FFFFFF}$name%{F-}"
                         ;;
                 esac
                 shift
