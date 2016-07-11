@@ -5,7 +5,7 @@ set background=dark
 let g:gruvbox_bold=0
 let g:gruvbox_underline=0
 let g:gruvbox_undercurl=0
-let g:gruvbox_contrast_dark='medium'
+let g:gruvbox_contrast_dark='hard'
 
 let base16colorspace=256
 
@@ -35,9 +35,17 @@ Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'ajh17/Spacegray.vim'
 Plugin 'sjl/badwolf'
+Plugin 'chriskempson/base16-vim'
+Plugin 'fatih/vim-go'
+Plugin 'cespare/vim-toml'
+Plugin 'fxn/vim-monochrome'
+Plugin 'junegunn/goyo.vim'
 call vundle#end()
 filetype plugin indent on
 colorscheme spacegray
+
+"au ColorScheme * hi Normal ctermbg=none guibg=none
+"au ColorScheme * hi NonText ctermbg=none guibg=none
 
 set lazyredraw
 set list

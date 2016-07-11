@@ -5,7 +5,7 @@
 
 # increase / decrease volume
 XF86Audio{Raise,Lower}Volume
-  amixer -q sset Master {3%+,3%-} unmute
+  amixer -q sset Master {2%+,2%-} unmute
 
 # Mute volume
 XF86AudioMute
@@ -21,11 +21,11 @@ super + Return
 
 # program launcher
 super + space
-    rofi -show run -m -1 -padding "20" -width 30 -lines 5 -color-window "#121315, #98805c, #98805c" -color-normal "#121315, #98805c, #121315, #98805c, #121315" -color-active "#121315, #98805c, #121315, #98805c, #121315" -location 0 -font "Space Mono 15" -bc "#98805c" -bw 2 -opacity 100 -fuzzy
+    rofi -show run -m -1 -padding 20 -width 30 -lines 5 -color-window "#1d1d1d, #f5f0f6, #f5f0f6" -color-normal "#1d1d1d, #f5f0f6, #1d1d1d, #f5f0f6, #1d1d1d" -color-active "#1d1d1d, #f5f0f6, #1d1d1d, #f5f0f6, #1d1d1d" -location 0 -font "Space Mono 15" -bc "#f5f0f6" -bw 2 -opacity 100 -regex
 
 # window management
 super + shift + space
-    rofi -show window -m -1 -padding "20" -width 30 -lines 5 -color-window "#121315, #98805c, #98805c" -regex -color-normal "#121315, #98805c, #121315, #98805c, #121315" -color-active "#121315, #98805c, #121315, #98805c, #121315" -location 0 -font "Space Mono 15" -bc "#98805c" -bw 2 -opacity 100 -fuzzy
+    rofi -show window -m -1 -padding 20 -width 30 -lines 5 -color-window "#1d1d1d, #f5f0f6, #f5f0f6" -color-normal "#1d1d1d, #f5f0f6, #1d1d1d, #f5f0f6, #1d1d1d" -color-active "#1d1d1d, #f5f0f6, #1d1d1d, #f5f0f6, #1d1d1d" -location 0 -font "Space Mono 15" -bc "#f5f0f6" -bw 2 -opacity 100
 
 # make sxhkd reload its configuration files:
 super + Escape

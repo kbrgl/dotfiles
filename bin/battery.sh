@@ -2,7 +2,7 @@
 status="$(cat /sys/class/power_supply/BAT0/status)"
 capacity="$(cat /sys/class/power_supply/BAT0/capacity)"
 color=false
-echo -n "%{F#645d3d}"
+echo -n "%{F#e5c078}"
 if [[ $status == "Charging" ]]; then
     echo -en "\uf0e7"
 elif [[ $capacity -ge  "85" ]]; then
@@ -15,7 +15,7 @@ elif [[ $capacity -ge "15" ]]; then
     echo -en "\uf243"
 elif [[ $capacity -ge "0" ]]; then
     color=true
-    echo -en "%{F#824d4d}\uf244"
+    echo -en "%{F#cc6666}\uf244"
 fi
 echo -n "%{F-}"
 

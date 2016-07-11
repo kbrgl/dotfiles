@@ -2,25 +2,24 @@
 
 sxhkd &
 
-bspc config border_width        1
-bspc config window_gap          10
-bspc config top_padding         70
+bspc config border_width        3
+bspc config window_gap          20
+bspc config top_padding         40
 bspc config right_padding       10
 bspc config bottom_padding      10
 bspc config left_padding        10
 
-bspc config split_ratio                       0.5
+bspc config split_ratio                       0.62
 bspc config focus_follows_pointer             true
 bspc config pointer_follows_monitor           true
 
-bspc config focused_border_color "#98805c"
-bspc config active_border_color "#98805c"
-bspc config normal_border_color "#0a0d16"
-bspc config presel_feedback_color "#0a0d16"
+bspc config focused_border_color "#c0c5ce"
+bspc config active_border_color "#c0c5ce"
+bspc config normal_border_color "#121315"
+bspc config presel_feedback_color "#181818"
 
 bspc monitor -d main web term av misc
 
-bspc rule -a 'Termite' desktop=term
 bspc rule -a 'chromium' desktop=web
 bspc rule -a 'WebTorrent' desktop=av
 bspc rule -a 'Transmission-gtk' desktop=misc

@@ -20,7 +20,7 @@ while read -r line; do
                         ;;
                     F*)
                         # focused free desktop
-                        chds $name "%{F#FFFFFF}$name%{F-}"
+                        chds $name "%{F#f5f0f6}$name%{F-}"
                         ;;
                     o*)
                         # occupied desktop
@@ -28,7 +28,7 @@ while read -r line; do
                         ;;
                     O*)
                         # focused occupied desktop
-                        chds $name "%{F#FFFFFF}[$name]%{F-}"
+                        chds $name "%{F#f5f0f6}[$name]%{F-}"
                         ;;
                     u*)
                         # urgent desktop
@@ -36,7 +36,7 @@ while read -r line; do
                         ;;
                     U*)
                         # focused urgent desktop
-                        chds $name "%{F#FFFFFF}$name%{F-}"
+                        chds $name "%{F#f5f0f6}$name%{F-}"
                         ;;
                 esac
                 shift
