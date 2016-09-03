@@ -1,7 +1,12 @@
 # Dotfiles
 My current config:
-* Shell: fish (with fisher and the Shellder theme from oh-my-fish)
 * Distro: Arch Linux
-* Wallpaper: [here](https://images.unsplash.com/photo-1460499593944-39e14f96a8c6?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=d8bc3d45d5eeaaf4f576665707f4fddb)
-* Misc. software: cmatrix, neofetch, Spotify, Neovim, Chromium, Nautilus, Paper icons, Adapta GTK, etc.
-
+* Window manager: [bspwm](https://github.com/baskerville/bspwm)
+* GTK theme: Arc-Flatabulous-Darker
+* Icon theme: Moka
+* Terminal emulator: [termite](https://github.com/thestinger/termite)
+* Shell: fish (with fisher and the Shellder theme from oh-my-fish)
+* Text editor: [neovim](https://github.com/neovim/neovim)
+* Bar program: [lemonbar-xft](https://github.com/krypt-n/bar) with [Admiral](https://github.com/sector-f/admiral)
+* Fonts: gohufont (bar), Inconsolata (terminal), Roboto (dunst)
+* Media player: [mpv](//mpv.io)
