@@ -1,13 +1,14 @@
 #!/bin/bash
+# This script gathers my dotfiles and pastes them into the dotfiles folder.
 
-if [[ $1 == "" ]]; then
-    echo "Please pass in the location of your user 'bin' folder"
-    exit 1
-fi
+
+# change the following variable to where you store your dotfile binaries
+# eg. ~/bin or /usr/local/bin
+bin=~/bin
 
 cd bin
 for file in $(dir -1); do
-    cp "$1/$file" .
+    cp "$bin/$file" .
 done
 cd ..
 
