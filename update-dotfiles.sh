@@ -1,7 +1,6 @@
 #!/bin/bash
 # This script gathers my dotfiles and pastes them into the dotfiles folder.
 
-
 # change the following variable to where you store your dotfile binaries
 # eg. ~/bin or /usr/local/bin
 bin=~/bin
@@ -22,3 +21,8 @@ cp ~/.config/bspwm/bspwmrc bspwm/
 cp ~/.config/sxhkd/sxhkdrc sxhkd/
 cp ~/.weechat/weechat.conf .
 
+if [[ $1 == "-p" ]] || [[ $1 == "--push" ]]; then
+    git add -A
+    git commit -m "" -e
+    git push origin master
+fi
