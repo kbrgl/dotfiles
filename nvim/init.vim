@@ -1,4 +1,5 @@
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 set shell=bash
 set background=dark
 
@@ -24,6 +25,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
+map <j> <gj>
+map <k> <gk>
+map <l> <gl>
+map <h> <gh>
+
 filetype off
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
@@ -39,13 +45,15 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'fatih/vim-go'
 Plugin 'cespare/vim-toml'
 Plugin 'fxn/vim-monochrome'
+Plugin 'w0ng/vim-hybrid'
 Plugin 'junegunn/goyo.vim'
 call vundle#end()
 filetype plugin indent on
 colorscheme spacegray
 
-"au ColorScheme * hi Normal ctermbg=none guibg=none
-"au ColorScheme * hi NonText ctermbg=none guibg=none
+au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme * hi NonText ctermbg=none guibg=none
+au ColorScheme * hi LineNr ctermbg=none guibg=none
 
 set lazyredraw
 set list

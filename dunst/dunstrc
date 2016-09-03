@@ -1,5 +1,5 @@
 [global]
-    font = Space Mono 15
+    font = Roboto 15
 
     # Allow a small subset of html markup:
     #   <b>bold</b>
@@ -149,7 +149,7 @@
 
 [frame]
     width = 1
-    color = "#121315"
+    color = "#111314"
 
 [shortcuts]
 
@@ -175,18 +175,18 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#121315"
-    foreground = "#98805c"
+    background = "#111314"
+    foreground = "#7986cb"
     timeout = 5
 
 [urgency_normal]
-    background = "#121315"
-    foreground = "#98805c"
+    background = "#111314"
+    foreground = "#7986cb"
     timeout = 5
 
 [urgency_critical]
-    background = "#121315"
-    foreground = "#98805c"
+    background = "#111314"
+    foreground = "#7986cb"
     timeout = 10
 
 

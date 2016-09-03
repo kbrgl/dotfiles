@@ -8,7 +8,7 @@ allow_bold = false
 foreground      = #c0c5ce
 foreground_bold = #c0c5ce
 cursor          = #c0c5ce
-background = #0f0f0f
+background = rgba(17, 19, 20, 0.9)
 
 # black
 color0  = #2b303b

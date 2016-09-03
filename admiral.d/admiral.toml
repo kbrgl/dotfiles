@@ -1,5 +1,5 @@
 [admiral]
-items = ["left", "padding", "workspaces", "right", "padding", "spotify", "padding", "network", "padding", "volume", "padding", "battery", "padding", "clock", "padding"]
+items = ["left", "padding", "workspaces", "center", "title", "right", "network", "padding", "volume", "padding", "battery", "padding", "clock", "padding"]
 
 [left]
 path = "echo '%{l}'"
@@ -21,7 +21,7 @@ static = true
 path = "reloader.rb 2 sp_current.rb | roller -t 30 -b '%{A4:sp prev:}%{A5:sp next:}%{A:sp play:}%{F#a57a9e}%{F-} ' -a '%{A}%{A}%{A}' -s ' | '"
 
 [title]
-path = "xtitle -s -t 20"
+path = "xtitle -s | roller -t 60"
 
 [launcher]
 path = "launcher.sh"
@@ -29,7 +29,7 @@ static = true
 
 [clock]
 path = "date +%H:%M"
-reload = 1
+reload = 3
 
 [battery]
 path = "battery.sh"
@@ -41,7 +41,7 @@ reload = 5
 
 [volume]
 path = "volume.sh"
-reload = 0.01
+reload = 0.05
 
 [hostname]
 path = "hostname.sh"
@@ -49,7 +49,3 @@ static = true
 
 [workspaces]
 path = "workspaces.sh"
-
-[2bwm]
-path = "xprop -root _NET_CURRENT_DESKTOP | sed -e 's/_NET_CURRENT_DESKTOP(CARDINAL) = //'"
-reload = 0.05
