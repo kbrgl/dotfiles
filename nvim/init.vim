@@ -2,13 +2,18 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 set shell=bash
 set background=dark
+let transparent=1
 
 let g:gruvbox_bold=0
 let g:gruvbox_underline=0
 let g:gruvbox_undercurl=0
 let g:gruvbox_contrast_dark='hard'
 
-let base16colorspace=256
+let g:airline_theme='bubblegum'
+let g:airline_powerline_fonts = 1
+
+let g:base16colorspace=256
+
 
 set tabstop=4
 set softtabstop=4
@@ -41,8 +46,12 @@ Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'ajh17/Spacegray.vim'
 Plugin 'sjl/badwolf'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chriskempson/base16-vim'
 Plugin 'fatih/vim-go'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'cespare/vim-toml'
 Plugin 'fxn/vim-monochrome'
 Plugin 'w0ng/vim-hybrid'
@@ -51,9 +60,17 @@ call vundle#end()
 filetype plugin indent on
 colorscheme spacegray
 
-au ColorScheme * hi Normal ctermbg=none guibg=none
-au ColorScheme * hi NonText ctermbg=none guibg=none
-au ColorScheme * hi LineNr ctermbg=none guibg=none
+if transparent
+    au ColorScheme * hi Normal ctermbg=none guibg=none
+    au ColorScheme * hi NonText ctermbg=none guibg=none
+    au ColorScheme * hi LineNr ctermbg=none guibg=none
+    au ColorScheme * hi Normal ctermbg=none guibg=none
+    au ColorScheme * hi Statement ctermbg=none guibg=none
+    au ColorScheme * hi Title ctermbg=none guibg=none
+    au ColorScheme * hi Todo ctermbg=none guibg=none
+    au ColorScheme * hi Underlined ctermbg=none guibg=none
+    au ColorScheme * hi ErrorMsg ctermbg=none guibg=none
+endif
 
 set lazyredraw
 set list
@@ -70,3 +87,12 @@ set directory=~/.tmp
 set writebackup
 
 let python_highlight_all=1
+
+function KernelStyle()
+    set tabstop=8
+    set softtabstop=8
+    set shiftwidth=8
+    set noexpandtab
+endfunction
+
+au BufNewFile,BufRead ~/kernels/* call KernelStyle()
