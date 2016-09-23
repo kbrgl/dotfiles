@@ -9,7 +9,7 @@ let g:gruvbox_underline=0
 let g:gruvbox_undercurl=0
 let g:gruvbox_contrast_dark='hard'
 
-let g:airline_theme='bubblegum'
+let g:airline_theme='hybrid'
 let g:airline_powerline_fonts = 1
 
 let g:base16colorspace=256
@@ -46,19 +46,21 @@ Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'ajh17/Spacegray.vim'
 Plugin 'sjl/badwolf'
-"Plugin 'vim-airline/vim-airline'
-"Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chriskempson/base16-vim'
 Plugin 'fatih/vim-go'
+Plugin 'vim-scripts/c.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'cespare/vim-toml'
 Plugin 'fxn/vim-monochrome'
 Plugin 'w0ng/vim-hybrid'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'junegunn/goyo.vim'
 call vundle#end()
 filetype plugin indent on
-colorscheme spacegray
+colorscheme hybrid
 
 if transparent
     au ColorScheme * hi Normal ctermbg=none guibg=none
