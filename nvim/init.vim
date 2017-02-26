@@ -1,7 +1,8 @@
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors
+if has("termguicolors")
+    set termguicolors
+endif
 set shell=bash
-set background=dark
 let transparent=1
 
 let g:gruvbox_bold=0
@@ -9,11 +10,7 @@ let g:gruvbox_underline=0
 let g:gruvbox_undercurl=0
 let g:gruvbox_contrast_dark='hard'
 
-let g:airline_theme='hybrid'
 let g:airline_powerline_fonts = 1
-
-let g:base16colorspace=256
-
 
 set tabstop=4
 set softtabstop=4
@@ -35,19 +32,18 @@ map <k> <gk>
 map <l> <gl>
 map <h> <gh>
 
-filetype off
+filetype on
 
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin("~/.config/nvim/bundle/")
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'rust-lang/rust.vim'
-Plugin 'mhinz/vim-startify'
 Plugin 'morhetz/gruvbox'
 Plugin 'joshdick/onedark.vim'
 Plugin 'ajh17/Spacegray.vim'
 Plugin 'sjl/badwolf'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
 Plugin 'chriskempson/base16-vim'
 Plugin 'fatih/vim-go'
 Plugin 'vim-scripts/c.vim'
@@ -58,11 +54,12 @@ Plugin 'fxn/vim-monochrome'
 Plugin 'w0ng/vim-hybrid'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'junegunn/goyo.vim'
+Plugin 'rakr/vim-one'
 call vundle#end()
 filetype plugin indent on
-colorscheme hybrid
+colorscheme spacegray
 
-if transparent
+if transparent && !has("gui_vimr")
     au ColorScheme * hi Normal ctermbg=none guibg=none
     au ColorScheme * hi NonText ctermbg=none guibg=none
     au ColorScheme * hi LineNr ctermbg=none guibg=none
@@ -72,6 +69,8 @@ if transparent
     au ColorScheme * hi Todo ctermbg=none guibg=none
     au ColorScheme * hi Underlined ctermbg=none guibg=none
     au ColorScheme * hi ErrorMsg ctermbg=none guibg=none
+    au ColorScheme * hi CursorLine ctermbg=none guibg=none
+    au ColorScheme * hi CursorColumn ctermbg=none guibg=none
 endif
 
 set lazyredraw
